@@ -23,7 +23,7 @@ vim.shiftwidth = 2
 vim.opt.expandtab = false
 
 -- Indent
-vim.opt.auotindent = true
+vim.opt.autoindent = true
 
 -- Highlighting
 vim.opt.hlsearch = false
