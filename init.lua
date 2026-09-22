@@ -1,9 +1,9 @@
 
 -- Colorscheme
 vim.pack.add({{
-    src = "https://github.com/rose-pine/neovim",
-    name = "rose-pine",
-},})
+  src = "https://github.com/rose-pine/neovim",
+  name = "rose-pine",
+}})
 require("rose-pine").setup({
   variant = "main",
 	dark_variant = "main",
@@ -21,10 +21,11 @@ vim.wo.relativenumber = true
 vim.wo.number = true
 
 -- Tabs
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
-vim.shiftwidth = 2
+local width = 2
 vim.opt.expandtab = false
+vim.opt.tabstop = width
+vim.opt.softtabstop = width
+vim.opt.shiftwidth = 0
 
 -- Indent
 vim.opt.autoindent = true
