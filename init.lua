@@ -1,4 +1,6 @@
 
+require("plugins.init")
+
 -- Colorscheme
 vim.pack.add({{
   src = "https://github.com/rose-pine/neovim",
