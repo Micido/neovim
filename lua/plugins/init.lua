@@ -4,7 +4,7 @@ local lua_path = os.getenv("CONFIG_ROOT") .. "/lua"
 local plugin_dir = lua_path .. "/plugins"
 
 local files = vim.fn.split(
-	vim.fn.globalpath(
+	vim.fn.globpath(
 		plugin_dir,
 		"**/*.lua"
 	),
@@ -28,6 +28,7 @@ for _, file in ipairs(files) do
 				"Error loading " .. module_path .. ": " .. module_content,
 				vim.log.levels.ERROR
 			)
+		end
 	end
 end
 

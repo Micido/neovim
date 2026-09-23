@@ -2,7 +2,7 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-lualine/lualine.nvim", name = "lualine" },
 })
 
-requires("lualine").setup({
+require("lualine").setup({
 	options = {
 		icons_enabled = true,
 		component_separators = { left = "", right = "" },
