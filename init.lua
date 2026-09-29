@@ -1,18 +1,6 @@
 
 require("plugins.init")
 
--- Colorscheme
-vim.pack.add({{
-  src = "https://github.com/rose-pine/neovim",
-  name = "rose-pine",
-}})
-require("rose-pine").setup({
-  variant = "main",
-	dark_variant = "main",
-	dim_inactive_windows = true,
-})
-vim.cmd("colorscheme rose-pine")
-
 -- Scrolloff
 local scrolloff = math.floor(vim.o.lines / 2) - 3
 vim.opt.scrolloff = scrolloff
