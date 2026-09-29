@@ -18,7 +18,6 @@
 				  nixd
 
 				  lua5_1
-					tar
 					curl
 					tree-sitter
 					ripgrep
