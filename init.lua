@@ -1,5 +1,8 @@
 
 require("plugins.init")
+require("config.binds")
+
+vim.g.mapleader = " "
 
 -- Scrolloff
 local scrolloff = math.floor(vim.o.lines / 2) - 3
