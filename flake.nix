@@ -11,23 +11,30 @@
     supportedSystems = [ "x86_64-linux" "aarch64-linux" ];
 
     forAllSystem = f: nixpkgs.lib.genAttrs supportedSystems ( system: f ( import nixpkgs { inherit system; } ) );
-  in {
+	in {
     packages = forAllSystem (
       pkgs : let
         pkgList = with pkgs; [
-	  nixd
+				  nixd
 
-	  lua5_1
-	];
+				  lua5_1
+					tar
+					curl
+					tree-sitter
+					ripgrep
+					fd
+					fzf
+					gcc
+				];
       in {
         default = inputs.wrappers.wrappers.neovim.wrap {
-	  inherit pkgs;
-	  env = {
-	    "CONFIG_ROOT" = ./.;
-	  };
-	  runtimePkgs = pkgList;
-	  settings.config_directory = ./.;
-	};
+				  inherit pkgs;
+				  env = {
+				    "CONFIG_ROOT" = ./.;
+				  };
+				  runtimePkgs = pkgList;
+				  settings.config_directory = ./.;
+				};
       }
     );
   };
