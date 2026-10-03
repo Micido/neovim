@@ -15,10 +15,11 @@
     packages = forAllSystem (
       pkgs : let
         pkgList = with pkgs; [
-				  nixd
+				  nixd # nix lsp
 
-				  lua5_1
-					curl
+				  lua5_1 # lua
+
+					# Plugin Requirement
 					tree-sitter
 					ripgrep
 					fd
