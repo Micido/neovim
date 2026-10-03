@@ -15,14 +15,17 @@
     packages = forAllSystem (
       pkgs : let
         pkgList = with pkgs; [
-				  nixd # nix lsp
-
-				  lua5_1 # lua
-
-					# Plugin Requirement
+				  # LSP
+					nixd
+					lua-language-server
+					
+					# Other
+				  lua5_1
 					tree-sitter
 					ripgrep
 					fd
+					cargo
+					luarocks
 					fzf
 					gcc
 				];

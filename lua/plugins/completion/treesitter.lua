@@ -12,5 +12,6 @@ require("nvim-treesitter").install({
 	"bash",
 	"latex",
 	"lua",
+	"regex",
 	"vim",
 })
