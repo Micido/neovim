@@ -65,7 +65,7 @@ require("blink.cmp").setup({
 			show_on_insert = true,
 			show_on_trigger_character = true,
 			show_on_keyword = true,
-			show_on_backspace = true,
+			show_on_backspace = false,
 		},
 		list = {
 			selection = {
