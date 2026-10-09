@@ -13,29 +13,27 @@
     forAllSystem = f: nixpkgs.lib.genAttrs supportedSystems ( system: f ( import nixpkgs { inherit system; } ) );
 	in {
     packages = forAllSystem (
-      pkgs : let
-        pkgList = with pkgs; [
-				  # LSP
-					nixd
-					lua-language-server
-					
-					# Other
-				  lua5_1
-					tree-sitter
-					ripgrep
-					fd
-					cargo
-					luarocks
-					fzf
-					gcc
-				];
-      in {
+      pkgs : {
         default = inputs.wrappers.wrappers.neovim.wrap {
 				  inherit pkgs;
 				  env = {
 				    "CONFIG_ROOT" = ./.;
 				  };
-				  runtimePkgs = pkgList;
+				  runtimePkgs = with pkgs; [
+						# LSP
+						nixd
+						lua-language-server
+						
+						# Other
+				  	lua5_1
+						tree-sitter
+						ripgrep
+						fd
+						cargo
+						luarocks
+						fzf
+						gcc
+					];
 				  settings.config_directory = ./.;
 				};
       }

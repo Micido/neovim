@@ -1,7 +1,7 @@
 vim.pack.add({
 	{ src = "https://github.com/neovim/nvim-lspconfig", name = "lspconfig" },
 	{ src = "https://github.com/saghen/blink.cmp", name = "blink" },
-	{ src = "https://github.com/saghen/blink.lib", name = "blink-lib" }
+	{ src = "https://github.com/saghen/blink.lib", name = "blink-lib" },
 })
 
 local hostname = vim.uv.os_gethostname()
@@ -60,6 +60,8 @@ require("blink.cmp").setup({
 		enabled = false,
 	},
 
+	snippets = { preset = 'mini_snippets' },
+
 	completion = {
 		trigger = {
 			show_on_insert = true,
@@ -85,8 +87,8 @@ require("blink.cmp").setup({
 		default = {
 			"lsp",
 			"snippets",
-			"buffer",
 			"path",
+			"buffer",
 		},
 	},
 })
