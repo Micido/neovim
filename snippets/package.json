@@ -1,0 +1,15 @@
+{
+	"name": "",
+	"type": "module",
+	"contributes": {
+		"snippets": [
+			{
+				"language": [
+					"plaintex", 
+					"tex"
+				],
+				"path": "./latex.json"
+			}
+		]
+	}
+}

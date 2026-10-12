@@ -1,0 +1,9 @@
+{
+	"math": {
+		"prefix": "mk",
+		"body": [ "\\${} ${1:math} {}$" ],
+		"luanspi": {
+			"autotrigger": true
+		}
+	}
+}
