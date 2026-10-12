@@ -53,7 +53,7 @@ require("luasnip").setup({
 	store_selection_keys = "<Tab>",
 })
 
-require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./snippets/" } })
+require("luasnip.loaders.from_lua").lazy_load({ paths = { "./snippets/" } })
 
 require("blink.cmp").build():pwait()
 

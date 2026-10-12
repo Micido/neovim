@@ -23,9 +23,9 @@
 						# LSP
 						nixd
 						lua-language-server
-						
+
 						# Other
-				  	lua5_1
+						lua5_1
 						tree-sitter
 						ripgrep
 						fd
