@@ -2,6 +2,7 @@ vim.pack.add({
 	{ src = "https://github.com/neovim/nvim-lspconfig", name = "lspconfig" },
 	{ src = "https://github.com/saghen/blink.cmp", name = "blink" },
 	{ src = "https://github.com/saghen/blink.lib", name = "blink-lib" },
+	{ src = "https://github.com/L3MON4D3/LuaSnip", name = "luasnip" }
 })
 
 local hostname = vim.uv.os_gethostname()
@@ -46,6 +47,14 @@ vim.lsp.enable({
 	"nixd"
 })
 
+require("luasnip").setup({
+	update_events = "TextChanged,TextChangedI",
+	enable_autosnippets = true,
+	store_selection_keys = "<Tab>",
+})
+
+require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./snippets/" } })
+
 require("blink.cmp").build():pwait()
 
 require("blink.cmp").setup({
@@ -53,14 +62,16 @@ require("blink.cmp").setup({
 	appearance = { use_nvim_cmp_as_default = true },
 
 	keymap = {
-		["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
+		preset = "default",
+		["<S-Tab>"] = { "snippet_backward", "select_prev", "fallback" },
+		["<Tab>"] = { "snippet_forward", "select_and_accept", "fallback" },
 	},
 
 	signature = {
 		enabled = false,
 	},
 
-	snippets = { preset = 'mini_snippets' },
+	snippets = { preset = 'luasnip' },
 
 	completion = {
 		trigger = {

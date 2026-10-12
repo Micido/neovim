@@ -35,6 +35,7 @@
 						gcc
 					];
 				  settings.config_directory = ./.;
+					settings.nvim_lua_env = lp: [ lp.jsregexp ];
 				};
       }
     );

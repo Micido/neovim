@@ -19,9 +19,3 @@ require("mini.indentscope").setup({
 		}),
 	}
 })
-
-require("mini.snippets").setup({
-	snippets = {
-		{ prefix = "mk", body = "\\${} $0 {}$" }
-	}
-})
