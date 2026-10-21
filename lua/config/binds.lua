@@ -11,3 +11,5 @@ local builtin = require("telescope.builtin")
 keymap("n", "<leader>ff", function()
 	builtin.find_files({ hidden = true })
 end)
+
+keymap("n", "<leader>q", ":!zathura <C-r>=expand('%:r')<cr>.pdf &<cr>")

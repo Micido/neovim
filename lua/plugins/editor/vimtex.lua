@@ -3,3 +3,5 @@ vim.pack.add({
 })
 
 vim.g.vimtex_view_method = "zathura"
+
+vim.b.vimtex_main = "test.tex"

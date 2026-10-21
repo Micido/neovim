@@ -53,7 +53,13 @@ require("luasnip").setup({
 	store_selection_keys = "<Tab>",
 })
 
-require("luasnip.loaders.from_lua").lazy_load({ paths = { "./snippets/" } })
+require("luasnip").config.set_config({
+	update_events = "TextChanged,TextChangedI",
+	enable_autosnippets = true,
+	store_selection_keys = "<Tab>",
+})
+
+require("luasnip.loaders.from_lua").lazy_load({ paths = { "~/Documents/Snippets/" } })
 
 require("blink.cmp").build():pwait()
 
