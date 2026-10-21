@@ -2,7 +2,7 @@
   description = "I have no idea what i am doing so i must go on";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
     wrappers.url = "github:BirdeeHub/nix-wrapper-modules";
     wrappers.inputs.nixpkgs.follows = "nixpkgs";
   };
@@ -25,6 +25,8 @@
 						lua-language-server
 
 						# Other
+						texliveMedium
+						biber
 						lua5_1
 						tree-sitter
 						ripgrep
